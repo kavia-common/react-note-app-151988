@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Monochrome theme overrides and base settings */
+body, #root {
+  @apply bg-white text-black;
+}
+
+a {
+  @apply text-black underline;
+}
+a:hover, a:focus {
+  @apply text-gray-700;
+}
+
+button,
+input[type="button"], input[type="submit"], .btn {
+  @apply bg-black text-white border-none;
+  transition: background 0.2s, color 0.2s;
+}
+button:hover,
+input[type="button"]:hover, input[type="submit"]:hover, .btn:hover {
+  @apply bg-white text-black border border-black;
+}
+
+hr {
+  @apply border-gray-400;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #737373;
+}
+
+input, textarea, select {
+  @apply bg-white text-black border border-gray-400;
+}
+input:focus, textarea:focus, select:focus {
+  @apply outline-none border-black;
+}
+
+/* Remove any colored Tailwind utility in components, enforce monochrome with !important */
+[class*="bg-"]:not(.bg-black):not(.bg-white):not(.bg-gray-*) {
+  background-color: #fff !important;
+}
+[class*="text-"]:not(.text-black):not(.text-white):not(.text-gray-*) {
+  color: #000 !important;
+}

@@ -7,14 +7,14 @@ import Routes from './components/Routes';
 
 const App: React.FC = () => {
     return (
-        <div className="container p-3 h-full m-auto">
-                <AppContext>
-                    <AppHeader />
-                    <div className="w-full mt-20">
-                        <Routes />
-                    </div>
-                    <AppFooter />
-                </AppContext>
+        <div className="container p-3 h-full m-auto bg-white text-black min-h-screen">
+            <AppContext>
+                <AppHeader />
+                <div className="w-full mt-20">
+                    <Routes />
+                </div>
+                <AppFooter />
+            </AppContext>
         </div>
     );
 };
